@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IB Text Transformer</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+    }
+
+    .box {
+      width: 50%;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>IB Text Transformer</h1>
+<p>Convert text into investment banking style</p>
+
+<div class="container">
+  <div class="box">
+    <h3>Input</h3>
+    <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+  </div>
+
+  <div class="box">
+    <h3>Output</h3>
+    <textarea id="outputText" readonly></textarea>
+  </div>
+</div>
+
+<button onclick="transform()">Transform</button>
+
+<script>
+function transform() {
+  const input = document.getElementById("inputText").value;
+
+  // versión MVP sin API (simulación inteligente)
+  const output = "INVESTMENT BANKING VERSION:\n\n" +
+    "• " + input.replace(/\./g, ".\n• ");
+
+  document.getElementById("outputText").value = output;
+}
+</script>
+
+</body>
+</html>
